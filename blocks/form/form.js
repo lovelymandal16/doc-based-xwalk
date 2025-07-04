@@ -405,6 +405,379 @@ function decode(rawContent) {
   return JSON.parse(cleanUp(content));
 }
 
+async function createMasterXDP() {
+  try {
+    const response = await fetch('http://localhost:4502/adobe/communications/crisprtoxdp', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Basic YWRtaW46YWRtaW4=',
+        'Content-Type': 'application/json',
+        'User-Agent': 'insomnia/10.1.1-adobe'
+      },
+      body: JSON.stringify({
+        "id": "L2NvbnRlbnQvZm9ybXMvYWYvdjJmb3Jtb3JpZw==",
+        "fieldType": "form",
+        "lang": "en",
+        "title": "v2formorig",
+        "action": "/adobe/forms/af/submit/L2NvbnRlbnQvZm9ybXMvYWYvdjJmb3Jtb3JpZw==",
+        "properties": {
+          "fd:changeEventBehaviour": "deps",
+          "themeRef": "/libs/fd/af/themes/canvas",
+          "fd:dor": {
+            "dorType": "none",
+            "pageTemplate": {
+              ":type": "core/fd/components/form/pageTemplate/v2/pageTemplate",
+              "template": {
+                ":type": "core/fd/components/form/template/v1/template",
+                ":items": {
+                  "panel": {
+                    "fieldType": "panel",
+                    "name": "form1",
+                    "properties": {
+                      "fd:dor": {
+                        "dorContainer": {
+                          "type": "subform",
+                          "locale": "en_US",
+                          "layout": "tb",
+                          "desc": {
+                            "text": {
+                              "content": "2023.07.17.1."
+                            }
+                          }
+                        }
+                      }
+                    },
+                    ":items": {
+                      "pageset": {
+                        "fieldType": "pageset",
+                        "properties": {
+                          "fd:dor": {
+                            "dorContainer": {
+                              "type": "pageset"
+                            }
+                          }
+                        },
+                        ":itemsOrder": [
+                          "Page1"
+                        ],
+                        ":items": {
+                          "Page1": {
+                            "fieldType": "pagearea",
+                            "properties": {
+                              "fd:dor": {
+                                "dorContainer": {
+                                  "type": "pagearea"
+                                }
+                              }
+                            },
+                            "name": "Page1",
+                            "id": "Page1",
+                            ":items": {
+                              "medium": {
+                                "fieldType": "medium",
+                                "properties": {
+                                  "fd:dor": {
+                                    "dorContainer": {
+                                      "type": "medium",
+                                      "stock": "default",
+                                      "short": "215.9mm",
+                                      "long": "279.4mm"
+                                    }
+                                  }
+                                }
+                              },
+                              "contentarea": {
+                                "fieldType": "contentarea",
+                                "properties": {
+                                  "fd:dor": {
+                                    "dorContainer": {
+                                      "type": "contentarea",
+                                      "width": "203.2mm",
+                                      "height": "266.7mm",
+                                      "left": "6.35mm",
+                                      "top": "6.35mm"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            ":itemsOrder": [
+                              "medium",
+                              "contentarea"
+                            ]
+                          }
+                        }
+                      }
+                    },
+                    ":itemsOrder": [
+                      "pageset"
+                    ]
+                  }
+                },
+                ":itemsOrder": [
+                  "panel"
+                ]
+              },
+              "config": "<config xmlns=\"http://www.xfa.org/schema/xci/3.0/\">\n   <agent name=\"designer\">\n      <!--  [0..n]  -->\n      <destination>pdf</destination>\n      <pdf>\n         <!--  [0..n]  -->\n         <fontInfo></fontInfo>\n      </pdf>\n   </agent>\n   <present>\n      <!--  [0..n]  -->\n      <pdf>\n         <!--  [0..n]  -->\n         <fontInfo>\n            <embed>0</embed>\n         </fontInfo>\n         <tagged>0</tagged>\n         <version>1.7</version>\n         <adobeExtensionLevel>11</adobeExtensionLevel>\n      </pdf>\n      <xdp>\n         <packets>*</packets>\n      </xdp>\n   </present>\n</config>",
+              "localeSet": "<localeSet xmlns=\"http://www.xfa.org/schema/xfa-locale-set/2.7/\">\n   <locale name=\"en_US\" desc=\"English (United States)\">\n      <calendarSymbols name=\"gregorian\">\n         <monthNames>\n            <month>January</month>\n            <month>February</month>\n            <month>March</month>\n            <month>April</month>\n            <month>May</month>\n            <month>June</month>\n            <month>July</month>\n            <month>August</month>\n            <month>September</month>\n            <month>October</month>\n            <month>November</month>\n            <month>December</month>\n         </monthNames>\n         <monthNames abbr=\"1\">\n            <month>Jan</month>\n            <month>Feb</month>\n            <month>Mar</month>\n            <month>Apr</month>\n            <month>May</month>\n            <month>Jun</month>\n            <month>Jul</month>\n            <month>Aug</month>\n            <month>Sep</month>\n            <month>Oct</month>\n            <month>Nov</month>\n            <month>Dec</month>\n         </monthNames>\n         <dayNames>\n            <day>Sunday</day>\n            <day>Monday</day>\n            <day>Tuesday</day>\n            <day>Wednesday</day>\n            <day>Thursday</day>\n            <day>Friday</day>\n            <day>Saturday</day>\n         </dayNames>\n         <dayNames abbr=\"1\">\n            <day>Sun</day>\n            <day>Mon</day>\n            <day>Tue</day>\n            <day>Wed</day>\n            <day>Thu</day>\n            <day>Fri</day>\n            <day>Sat</day>\n         </dayNames>\n         <meridiemNames>\n            <meridiem>AM</meridiem>\n            <meridiem>PM</meridiem>\n         </meridiemNames>\n         <eraNames>\n            <era>BC</era>\n            <era>AD</era>\n         </eraNames>\n      </calendarSymbols>\n      <datePatterns>\n         <datePattern name=\"full\">EEEE, MMMM D, YYYY</datePattern>\n         <datePattern name=\"long\">MMMM D, YYYY</datePattern>\n         <datePattern name=\"med\">MMM D, YYYY</datePattern>\n         <datePattern name=\"short\">M/D/YY</datePattern>\n      </datePatterns>\n      <timePatterns>\n         <timePattern name=\"full\">h:MM:SS A Z</timePattern>\n         <timePattern name=\"long\">h:MM:SS A Z</timePattern>\n         <timePattern name=\"med\">h:MM:SS A</timePattern>\n         <timePattern name=\"short\">h:MM A</timePattern>\n      </timePatterns>\n      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>\n      <numberPatterns>\n         <numberPattern name=\"numeric\">z,zz9.zzz</numberPattern>\n         <numberPattern name=\"currency\">$z,zz9.99|($z,zz9.99)</numberPattern>\n         <numberPattern name=\"percent\">z,zz9%</numberPattern>\n      </numberPatterns>\n      <numberSymbols>\n         <numberSymbol name=\"decimal\">.</numberSymbol>\n         <numberSymbol name=\"grouping\">,</numberSymbol>\n         <numberSymbol name=\"percent\">%</numberSymbol>\n         <numberSymbol name=\"minus\">-</numberSymbol>\n         <numberSymbol name=\"zero\">0</numberSymbol>\n      </numberSymbols>\n      <currencySymbols>\n         <currencySymbol name=\"symbol\">$</currencySymbol>\n         <currencySymbol name=\"isoname\">USD</currencySymbol>\n         <currencySymbol name=\"decimal\">.</currencySymbol>\n      </currencySymbols>\n      <typefaces>\n         <typeface name=\"Myriad Pro\"></typeface>\n         <typeface name=\"Minion Pro\"></typeface>\n         <typeface name=\"Courier Std\"></typeface>\n         <typeface name=\"Adobe Pi Std\"></typeface>\n         <typeface name=\"Adobe Hebrew\"></typeface>\n         <typeface name=\"Adobe Arabic\"></typeface>\n         <typeface name=\"Adobe Thai\"></typeface>\n         <typeface name=\"Kozuka Gothic Pro-VI M\"></typeface>\n         <typeface name=\"Kozuka Mincho Pro-VI R\"></typeface>\n         <typeface name=\"Adobe Ming Std L\"></typeface>\n         <typeface name=\"Adobe Song Std L\"></typeface>\n         <typeface name=\"Adobe Myungjo Std M\"></typeface>\n         <typeface name=\"Adobe Devanagari\"></typeface>\n      </typefaces>\n   </locale>\n</localeSet>",
+              "xmpMetaData": "<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"Adobe XMP Core 9.0-c000 79.cca54b0, 2022/11/26-09:29:55        \">\n   <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n      <rdf:Description xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\" xmlns:pdfuaid=\"http://www.aiim.org/pdfua/ns/id/\" xmlns:pdf=\"http://ns.adobe.com/pdf/1.3/\" xmlns:xmpMM=\"http://ns.adobe.com/xap/1.0/mm/\" xmlns:desc=\"http://ns.adobe.com/xfa/promoted-desc/\" rdf:about=\"\">\n         <xmp:MetadataDate>2024-05-20T09:32:29Z</xmp:MetadataDate>\n         <xmp:CreatorTool>Designer 2023.07</xmp:CreatorTool>\n         <pdfuaid:part>1</pdfuaid:part>\n         <pdf:Producer>Designer 2023.07</pdf:Producer>\n         <xmpMM:DocumentID>uuid:36f0018a-338d-4185-9f48-13eb5d7236fb</xmpMM:DocumentID>\n         <desc:version rdf:parseType=\"Resource\">\n            <rdf:value>2023.07.17.1.</rdf:value>\n            <desc:ref>/template/subform[1]</desc:ref>\n         </desc:version>\n      </rdf:Description>\n   </rdf:RDF>\n</x:xmpmeta>"
+            }
+          },
+          "fd:path": "/content/forms/af/v2formorig/jcr:content/guideContainer",
+          "fd:schemaType": "BASIC",
+          "fd:isHamburgerMenuEnabled": false,
+          "fd:roleAttribute": null,
+          "fd:formDataEnabled": false,
+          "fd:customFunctionsUrl": "/adobe/forms/af/customfunctions/L2NvbnRlbnQvZm9ybXMvYWYvdjJmb3Jtb3JpZw==",
+          "fd:dataUrl": "/adobe/forms/af/data/L2NvbnRlbnQvZm9ybXMvYWYvdjJmb3Jtb3JpZw=="
+        },
+        "columnCount": 12,
+        "columnClassNames": {
+          "text": "aem-GridColumn aem-GridColumn--default--12",
+          "textinput": "aem-GridColumn aem-GridColumn--default--12"
+        },
+        "gridClassNames": "aem-Grid aem-Grid--12 aem-Grid--default--12",
+        "events": {
+          "custom:setProperty": [
+            "$event.payload"
+          ]
+        },
+        ":itemsOrder": [
+          "text",
+          "textinput"
+        ],
+        "adaptiveform": "0.14.2",
+        "metadata": {
+          "grammar": "json-formula-1.0.0",
+          "version": "1.0.0"
+        },
+        ":type": "forms-components-examples/components/form/container",
+        ":items": {
+          "text": {
+            "id": "text-66a51cb1bd",
+            "fieldType": "plain-text",
+            "name": "text1747655022767",
+            "value": "<p>Hello Dhruv</p>",
+            "richText": true,
+            "events": {
+              "custom:setProperty": [
+                "$event.payload"
+              ]
+            },
+            "properties": {
+              "fd:dor": {
+                "dorExclusion": false
+              },
+              "fd:path": "/content/forms/af/v2formorig/jcr:content/guideContainer/text"
+            },
+            ":type": "forms-components-examples/components/form/text"
+          },
+          "textinput": {
+            "id": "textinput-1d1c218acd",
+            "fieldType": "text-input",
+            "name": "textinput1751433586926",
+            "visible": true,
+            "type": "string",
+            "enabled": true,
+            "readOnly": false,
+            "default": "My Field Value",
+            "label": {
+              "visible": true,
+              "value": "Text Input"
+            },
+            "events": {
+              "custom:setProperty": [
+                "$event.payload"
+              ]
+            },
+            "properties": {
+              "fd:dor": {
+                "dorExclusion": false
+              },
+              "fd:path": "/content/forms/af/v2formorig/jcr:content/guideContainer/textinput"
+            },
+            "placeholder": "My Field Placeholder",
+            ":type": "forms-components-examples/components/form/textinput"
+          }
+        },
+        "allowedComponents": {
+          "components": [
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/accordion",
+              "title": "Adaptive Form Accordion"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/button",
+              "title": "Adaptive Form Button"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/checkbox",
+              "title": "Adaptive Form CheckBox"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/checkboxgroup",
+              "title": "Adaptive Form CheckBox Group"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/container",
+              "title": "Adaptive Form Container"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/datepicker",
+              "title": "Adaptive Form Date Picker"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/dropdown",
+              "title": "Adaptive Form Drop-down List"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/emailinput",
+              "title": "Adaptive Form Email Input"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/fileinput",
+              "title": "Adaptive Form File Attachment"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/footer",
+              "title": "Footer"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/fragment",
+              "title": "Adaptive Form Fragment"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-core-components-it/form/hcaptcha",
+              "title": "Adaptive Form hCaptcha® (v1)"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/image",
+              "title": "Adaptive Form Image"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/numberinput",
+              "title": "Adaptive Form Number Input"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/pageheader",
+              "title": "Header"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/panelcontainer",
+              "title": "Adaptive Form Panel"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/radiobutton",
+              "title": "Adaptive Form Radio Button"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/recaptcha",
+              "title": "Adaptive Form reCAPTCHA (v1)"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/actions/reset",
+              "title": "Adaptive Form Reset Button"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/review",
+              "title": "Adaptive Form Review"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/actions/submit",
+              "title": "Adaptive Form Submit Button"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-core-components-it/components/svg",
+              "title": "Adaptive Form Svg"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/switch",
+              "title": "Adaptive Form Switch"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/tabsontop",
+              "title": "Adaptive Form Horizontal Tabs"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/telephoneinput",
+              "title": "Adaptive Form Telephone Input"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/termsandconditions",
+              "title": "Adaptive Form Terms And Conditions"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/text",
+              "title": "Adaptive Form Text"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/textinput",
+              "title": "Adaptive Form Text Box"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-core-components-it/components/textinput/v1/textinput",
+              "title": "Core Components IT - Custom Adaptive Form Text Input"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/title",
+              "title": "Adaptive Form Title"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-core-components-it/form/turnstile",
+              "title": "Adaptive Form Cloudflare® Turnstile (v1)"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/verticaltabs",
+              "title": "Adaptive Form Vertical Tabs"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/form/wizard",
+              "title": "Adaptive Form Wizard Layout"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/draftsandsubmissions",
+              "title": "Drafts and submissions"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/linkcomponent",
+              "title": "Link"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/searchlister",
+              "title": "Search and Lister"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/aemform",
+              "title": "Adaptive Form - Embed"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/demo/component",
+              "title": "Demo Component"
+            },
+            {
+              "path": "/content/forms/af/v2formorig/jcr:content/guideContainer/forms-components-examples/components/demo",
+              "title": "Forms Demo"
+            }
+          ],
+          "applicable": false
+        }
+      })
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      console.log('Master XDP created successfully:', result);
+      return result;
+    } else {
+      console.error('Failed to create Master XDP:', response.status, response.statusText);
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error('Error creating Master XDP:', error);
+    throw error;
+  }
+}
+
 function extractFormDefinition(block) {
   let formDef;
   const container = block.querySelector('pre');
@@ -463,44 +836,50 @@ export default async function decorate(block) {
   let rules = true;
   let form;
   if (formDef) {
-    const submitProps = formDef?.properties?.['fd:submit'];
-    const actionType = submitProps?.actionName || formDef?.properties?.actionType;
-    const spreadsheetUrl = submitProps?.spreadsheet?.spreadsheetUrl
-      || formDef?.properties?.spreadsheetUrl;
+    // const submitProps = formDef?.properties?.['fd:submit'];
+    // const actionType = submitProps?.actionName || formDef?.properties?.actionType;
+    // const spreadsheetUrl = submitProps?.spreadsheet?.spreadsheetUrl
+    //   || formDef?.properties?.spreadsheetUrl;
 
-    if (actionType === 'spreadsheet' && spreadsheetUrl) {
-      // Check if we're in an iframe and use parent window path if available
-      const iframePath = window.frameElement ? window.parent.location.pathname
-        : window.location.pathname;
-      formDef.action = SUBMISSION_SERVICE + btoa(pathname || iframePath);
-    } else {
-      formDef.action = getSubmitBaseUrl() + (formDef.action || '');
+    // if (actionType === 'spreadsheet' && spreadsheetUrl) {
+    //   // Check if we're in an iframe and use parent window path if available
+    //   const iframePath = window.frameElement ? window.parent.location.pathname
+    //     : window.location.pathname;
+    //   formDef.action = SUBMISSION_SERVICE + btoa(pathname || iframePath);
+    // } else {
+    //   formDef.action = getSubmitBaseUrl() + (formDef.action || '');
+    // }
+    if (pathname && pathname.includes('datasheet.json')) {
+      //will add later
     }
-    if (isDocumentBasedForm(formDef)) {
-      const transform = new DocBasedFormToAF();
-      formDef = transform.transform(formDef);
-      source = 'sheet';
-      form = await createForm(formDef);
-      const docRuleEngine = await import('./rules-doc/index.js');
-      docRuleEngine.default(formDef, form);
-      rules = false;
-    } else {
-      afModule = await import('./rules/index.js');
-      if (afModule && afModule.initAdaptiveForm && !block.classList.contains('edit-mode')) {
-        form = await afModule.initAdaptiveForm(formDef, createForm);
+    else {
+      createMasterXDP();
+      if (isDocumentBasedForm(formDef)) {
+        const transform = new DocBasedFormToAF();
+        formDef = transform.transform(formDef);
+        source = 'sheet';
+        form = await createForm(formDef);
+        const docRuleEngine = await import('./rules-doc/index.js');
+        docRuleEngine.default(formDef, form);
+        rules = false;
       } else {
-        form = await createFormForAuthoring(formDef);
+        afModule = await import('./rules/index.js');
+        if (afModule && afModule.initAdaptiveForm && !block.classList.contains('edit-mode')) {
+          form = await afModule.initAdaptiveForm(formDef, createForm);
+        } else {
+          form = await createFormForAuthoring(formDef);
+        }
       }
+      form.dataset.redirectUrl = formDef.redirectUrl || '';
+      form.dataset.thankYouMsg = formDef.thankYouMsg || '';
+      form.dataset.action = formDef.action || pathname?.split('.json')[0];
+      form.dataset.source = source;
+      form.dataset.rules = rules;
+      form.dataset.id = formDef.id;
+      if (source === 'aem' && formDef.properties) {
+        form.dataset.formpath = formDef.properties['fd:path'];
+      }
+      container.replaceWith(form);
     }
-    form.dataset.redirectUrl = formDef.redirectUrl || '';
-    form.dataset.thankYouMsg = formDef.thankYouMsg || '';
-    form.dataset.action = formDef.action || pathname?.split('.json')[0];
-    form.dataset.source = source;
-    form.dataset.rules = rules;
-    form.dataset.id = formDef.id;
-    if (source === 'aem' && formDef.properties) {
-      form.dataset.formpath = formDef.properties['fd:path'];
-    }
-    container.replaceWith(form);
   }
 }
