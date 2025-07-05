@@ -857,7 +857,22 @@ export default async function decorate(block) {
       if (isDocumentBasedForm(formDef)) {
         const transform = new DocBasedFormToAF();
         formDef = transform.transform(formDef);
-        formDef = transformJson(formDef);
+        //formDef = transformJson(formDef);
+        var headers= new Headers(); 
+    headers.append('Authorization', 'Basic ' + btoa('admin:admin'));
+    headers.append('Content-Language', 'en-US');
+    headers.append('Content-Type', 'application/json;charset=utf-8');
+    headers.append('x-adobe-accept-unsupported-api', '1');
+        var data = JSON.stringify(formDef);
+        // Fetch the response
+        var options = {
+          method: 'POST',
+          body: data,
+          headers: headers,
+        };
+        
+        var response = await fetch('https://7fce-130-248-113-29.ngrok-free.app/adobe/communications/crisprtoxdp', options);
+        console.log(response);
         //source = 'sheet';
         // form = await createForm(formDef);
         // const docRuleEngine = await import('./rules-doc/index.js');
