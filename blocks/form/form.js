@@ -856,15 +856,8 @@ export default async function decorate(block) {
      // createMasterXDP();
       if (isDocumentBasedForm(formDef)) {
         const transform = new DocBasedFormToAF();
-        formDef = transform.transform(formDef);
-        formDef = transformJson(formDef);
-        //source = 'sheet';
-        // form = await createForm(formDef);
-        // const docRuleEngine = await import('./rules-doc/index.js');
-        // docRuleEngine.default(formDef, form);
-        // rules = false;
-
-        var headers= new Headers(); 
+    
+var headers= new Headers(); 
     headers.append('Authorization', 'Basic ' + btoa('admin:admin'));
     headers.append('Content-Language', 'en-US');
     headers.append('Content-Type', 'application/json;charset=utf-8');
@@ -879,7 +872,6 @@ export default async function decorate(block) {
         
         var response = await fetch('https://7fce-130-248-113-29.ngrok-free.app/adobe/communications/crisprtoxdp', options);
         console.log(response);
- 
       } else {
         afModule = await import('./rules/index.js');
         if (afModule && afModule.initAdaptiveForm && !block.classList.contains('edit-mode')) {
