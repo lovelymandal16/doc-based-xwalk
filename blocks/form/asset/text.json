@@ -1,0 +1,31 @@
+{
+  "type": "text",
+  "attribute": {
+    "height": "15.2331mm",
+    "width": "29.2864mm",
+    "name": "Text"
+  },
+  "value": {
+    "richText": {
+      "contentType": "text/html",
+      "content": ""
+    }
+  },
+  "ui": {
+    "textEdit": {}
+  },
+  "margin": {
+    "topInset": "0.5mm",
+    "leftInset": "0.5mm",
+    "bottomInset": "0.5mm",
+    "rightInset": "0.5mm"
+  },
+  "font": {
+    "typeface": "Arial",
+    "fill": {
+      "color": {
+        "value": "#000000"
+      }
+    }
+  }
+}

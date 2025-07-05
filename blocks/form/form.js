@@ -853,15 +853,16 @@ export default async function decorate(block) {
       //will add later
     }
     else {
-      createMasterXDP();
+     // createMasterXDP();
       if (isDocumentBasedForm(formDef)) {
         const transform = new DocBasedFormToAF();
         formDef = transform.transform(formDef);
-        source = 'sheet';
-        form = await createForm(formDef);
-        const docRuleEngine = await import('./rules-doc/index.js');
-        docRuleEngine.default(formDef, form);
-        rules = false;
+        formDef = transformJson(formDef);
+        //source = 'sheet';
+        // form = await createForm(formDef);
+        // const docRuleEngine = await import('./rules-doc/index.js');
+        // docRuleEngine.default(formDef, form);
+        // rules = false;
       } else {
         afModule = await import('./rules/index.js');
         if (afModule && afModule.initAdaptiveForm && !block.classList.contains('edit-mode')) {
