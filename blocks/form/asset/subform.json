@@ -1,0 +1,9 @@
+{
+  "type": "subform",
+  "attribute": {
+    "height": "50mm",
+    "width": "100mm",
+    "layout": "",
+    "name": "Subform"
+  }
+}

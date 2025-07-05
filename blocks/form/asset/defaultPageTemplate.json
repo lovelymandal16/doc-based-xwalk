@@ -1,0 +1,132 @@
+{
+    "pageTemplate": {
+        "template": {
+            "id": "template",
+            "name": "template",
+            ":items": {
+                "panel": {
+                    "id": "panel-06afc6698f",
+                    "fieldType": "panel",
+                    "name": "form1",
+                    "visible": true,
+                    "label": {
+                        "value": ""
+                    },
+                    "events": {
+                        "custom:setProperty": [
+                            "$event.payload"
+                        ]
+                    },
+                    "properties": {
+                        "fd:dor": {
+                            "dorExclusion": false,
+                            "dorExcludeTitle": false,
+                            "dorExcludeDescription": false,
+                            "dorContainer": {
+                                "type": "subform",
+                                "name": "form1",
+                                "locale": "en_US",
+                                "layout": "tb",
+                                ":type": "core/fd/components/print/paneldorcontainer/v1/paneldorcontainer"
+                            }
+                        },
+                        "fd:path": "/content/forms/af/mahor/testic/print/jcr:content/guideContainer/fd:pageTemplate/template/panel"
+                    },
+                    ":itemsOrder": [
+                        "pageset_mcltwdb4p5qu0klat6"
+                    ],
+                    ":type": "core/fd/components/form/panel/v1/panel",
+                    ":items": {
+                        "pageset_mcltwdb4p5qu0klat6": {
+                            "fieldType": "pageset",
+                            "properties": {
+                                "fd:path": "/content/forms/af/mahor/testic/print/jcr:content/guideContainer/fd:pageTemplate/template/panel/pageset_mcltwdb4p5qu0klat6",
+                                "fd:dor": {
+                                    "dorContainer": {
+                                        ":type": "core/fd/components/print/pagesetdorcontainer/v1/pagesetdorcontainer",
+                                        "type": "pageset"
+                                    }
+                                }
+                            },
+                            "id": "pageset_mcltwdb4p5qu0klat6",
+                            "name": "Master Pages",
+                            ":type": "core/fd/components/print/pageset/v1/pageset",
+                            ":itemsOrder": [
+                                "pagearea-2cc60c2cd3"
+                            ],
+                            ":items": {
+                                "pagearea-2cc60c2cd3": {
+                                    "fieldType": "pagearea",
+                                    "properties": {
+                                        "fd:dor": {
+                                            "dorContainer": {
+                                                "type": "pagearea",
+                                                "name": "Page1",
+                                                "id": "Page1",
+                                                ":type": "core/fd/components/print/pageareadorcontainer/v1/pageareadorcontainer"
+                                            }
+                                        },
+                                        "fd:path": "/content/forms/af/mahor/testic/print/jcr:content/guideContainer/fd:pageTemplate/template/panel/pageset_mcltwdb4p5qu0klat6/pagearea-2cc60c2cd3"
+                                    },
+                                    "name": "Page1",
+                                    "id": "pagearea-2cc60c2cd3",
+                                    ":type": "core/fd/components/print/pagearea/v1/pagearea",
+                                    ":items": {
+                                        "medium": {
+                                            "fieldType": "medium",
+                                            "name": "medium",
+                                            "properties": {
+                                                "fd:dor": {
+                                                    "dorContainer": {
+                                                        "type": "medium",
+                                                        "stock": "default",
+                                                        "short": "215.9mm",
+                                                        "long": "279.4mm",
+                                                        ":type": "core/fd/components/print/mediumdorcontainer/v1/mediumdorcontainer"
+                                                    }
+                                                }
+                                            },
+                                            ":type": "core/fd/components/print/medium/v1/medium"
+                                        },
+                                        "contentarea_mcltwdb7y8w8c5zt94d": {
+                                            "fieldType": "contentarea",
+                                            "name": "untitled contentarea",
+                                            "properties": {
+                                                "fd:path": "/content/forms/af/mahor/testic/print/jcr:content/guideContainer/fd:pageTemplate/template/contentarea_mcltwdb7y8w8c5zt94d",
+                                                "fd:dor": {
+                                                    "dorContainer": {
+                                                        "type": "contentarea",
+                                                        "width": "203.2mm",
+                                                        "height": "266.7mm",
+                                                        "left": "6.35mm",
+                                                        "top": "6.35mm",
+                                                        ":type": "core/fd/components/print/contentareadorcontainer/v1/contentareadorcontainer"
+                                                    }
+                                                }
+                                            },
+                                            ":type": "core/fd/components/print/contentarea/v1/contentarea"
+                                        }
+                                    },
+                                    ":itemsOrder": [
+                                        "medium",
+                                        "contentarea_mcltwdb7y8w8c5zt94d"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            ":itemsOrder": [
+                "panel"
+            ],
+            ":type": "core/fd/components/print/template/v1/template"
+        },
+        "config": "<config xmlns=\"http://www.xfa.org/schema/xci/3.0/\">\n   <agent name=\"designer\">\n      <!--  [0..n]  -->\n      <destination>pdf</destination>\n      <pdf>\n         <!--  [0..n]  -->\n         <fontInfo></fontInfo>\n      </pdf>\n   </agent>\n   <present>\n      <!--  [0..n]  -->\n      <pdf>\n         <!--  [0..n]  -->\n         <fontInfo>\n            <embed>0</embed>\n         </fontInfo>\n         <tagged>0</tagged>\n         <version>1.7</version>\n         <adobeExtensionLevel>11</adobeExtensionLevel>\n      </pdf>\n      <xdp>\n         <packets>*</packets>\n      </xdp>\n   </present>\n</config>",
+        "localeSet": "<localeSet xmlns=\"http://www.xfa.org/schema/xfa-locale-set/2.7/\">\n   <locale name=\"en_US\" desc=\"English (United States)\">\n      <calendarSymbols name=\"gregorian\">\n         <monthNames>\n            <month>January</month>\n            <month>February</month>\n            <month>March</month>\n            <month>April</month>\n            <month>May</month>\n            <month>June</month>\n            <month>July</month>\n            <month>August</month>\n            <month>September</month>\n            <month>October</month>\n            <month>November</month>\n            <month>December</month>\n         </monthNames>\n         <monthNames abbr=\"1\">\n            <month>Jan</month>\n            <month>Feb</month>\n            <month>Mar</month>\n            <month>Apr</month>\n            <month>May</month>\n            <month>Jun</month>\n            <month>Jul</month>\n            <month>Aug</month>\n            <month>Sep</month>\n            <month>Oct</month>\n            <month>Nov</month>\n            <month>Dec</month>\n         </monthNames>\n         <dayNames>\n            <day>Sunday</day>\n            <day>Monday</day>\n            <day>Tuesday</day>\n            <day>Wednesday</day>\n            <day>Thursday</day>\n            <day>Friday</day>\n            <day>Saturday</day>\n         </dayNames>\n         <dayNames abbr=\"1\">\n            <day>Sun</day>\n            <day>Mon</day>\n            <day>Tue</day>\n            <day>Wed</day>\n            <day>Thu</day>\n            <day>Fri</day>\n            <day>Sat</day>\n         </dayNames>\n         <meridiemNames>\n            <meridiem>AM</meridiem>\n            <meridiem>PM</meridiem>\n         </meridiemNames>\n         <eraNames>\n            <era>BC</era>\n            <era>AD</era>\n         </eraNames>\n      </calendarSymbols>\n      <datePatterns>\n         <datePattern name=\"full\">EEEE, MMMM D, YYYY</datePattern>\n         <datePattern name=\"long\">MMMM D, YYYY</datePattern>\n         <datePattern name=\"med\">MMM D, YYYY</datePattern>\n         <datePattern name=\"short\">M/D/YY</datePattern>\n      </datePatterns>\n      <timePatterns>\n         <timePattern name=\"full\">h:MM:SS A Z</timePattern>\n         <timePattern name=\"long\">h:MM:SS A Z</timePattern>\n         <timePattern name=\"med\">h:MM:SS A</timePattern>\n         <timePattern name=\"short\">h:MM A</timePattern>\n      </timePatterns>\n      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>\n      <numberPatterns>\n         <numberPattern name=\"numeric\">z,zz9.zzz</numberPattern>\n         <numberPattern name=\"currency\">$z,zz9.99|($z,zz9.99)</numberPattern>\n         <numberPattern name=\"percent\">z,zz9%</numberPattern>\n      </numberPatterns>\n      <numberSymbols>\n         <numberSymbol name=\"decimal\">.</numberSymbol>\n         <numberSymbol name=\"grouping\">,</numberSymbol>\n         <numberSymbol name=\"percent\">%</numberSymbol>\n         <numberSymbol name=\"minus\">-</numberSymbol>\n         <numberSymbol name=\"zero\">0</numberSymbol>\n      </numberSymbols>\n      <currencySymbols>\n         <currencySymbol name=\"symbol\">$</currencySymbol>\n         <currencySymbol name=\"isoname\">USD</currencySymbol>\n         <currencySymbol name=\"decimal\">.</currencySymbol>\n      </currencySymbols>\n      <typefaces>\n         <typeface name=\"Myriad Pro\"></typeface>\n         <typeface name=\"Minion Pro\"></typeface>\n         <typeface name=\"Courier Std\"></typeface>\n         <typeface name=\"Adobe Pi Std\"></typeface>\n         <typeface name=\"Adobe Hebrew\"></typeface>\n         <typeface name=\"Adobe Arabic\"></typeface>\n         <typeface name=\"Adobe Thai\"></typeface>\n         <typeface name=\"Kozuka Gothic Pro-VI M\"></typeface>\n         <typeface name=\"Kozuka Mincho Pro-VI R\"></typeface>\n         <typeface name=\"Adobe Ming Std L\"></typeface>\n         <typeface name=\"Adobe Song Std L\"></typeface>\n         <typeface name=\"Adobe Myungjo Std M\"></typeface>\n         <typeface name=\"Adobe Devanagari\"></typeface>\n      </typefaces>\n   </locale>\n</localeSet>",
+        "xmpMetaData": "<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"Adobe XMP Core 9.0-c000 79.cca54b0, 2022/11/26-09:29:55        \">\n   <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n      <rdf:Description xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\" xmlns:pdfuaid=\"http://www.aiim.org/pdfua/ns/id/\" xmlns:pdf=\"http://ns.adobe.com/pdf/1.3/\" xmlns:xmpMM=\"http://ns.adobe.com/xap/1.0/mm/\" xmlns:desc=\"http://ns.adobe.com/xfa/promoted-desc/\" rdf:about=\"\">\n         <xmp:MetadataDate>2024-05-20T09:32:29Z</xmp:MetadataDate>\n         <xmp:CreatorTool>Designer 2023.07</xmp:CreatorTool>\n         <pdfuaid:part>1</pdfuaid:part>\n         <pdf:Producer>Designer 2023.07</pdf:Producer>\n         <xmpMM:DocumentID>uuid:36f0018a-338d-4185-9f48-13eb5d7236fb</xmpMM:DocumentID>\n         <desc:version rdf:parseType=\"Resource\">\n            <rdf:value>2023.07.17.1.</rdf:value>\n            <desc:ref>/template/subform[1]</desc:ref>\n         </desc:version>\n      </rdf:Description>\n   </rdf:RDF>\n</x:xmpmeta>",
+        ":type": "core/fd/components/print/pagetemplate/v1/pagetemplate",
+        "id": "pagetemplate",
+        "name": "pagetemplate"
+    }
+}

@@ -1,0 +1,63 @@
+{
+  "type": "checkbutton",
+  "attribute": {
+    "name": "CheckBox",
+    "height": "5.9948mm",
+    "width": "28.0096mm"
+  },
+  "value": {
+    "integer": {
+      "content": "0"
+    }
+  },
+  "margin": {
+    "topInset": "0mm",
+    "leftInset": "1mm",
+    "bottomInset": "0mm",
+    "rightInset": "1mm"
+  },
+  "caption": {
+    "value": {
+      "text": {
+        "content": "Check Box"
+      }
+    },
+    "reserve": "21.00072mm",
+    "placement": "right"
+  },
+  "ui": {
+    "checkButton": {
+      "size": "3.5278mm",
+      "mark": "check",
+      "border": {
+        "edges": {
+          "bottom": {
+            "stroke": "lowered"
+          },
+          "left": {
+            "stroke": "lowered"
+          },
+          "right": {
+            "stroke": "lowered"
+          },
+          "top": {
+            "stroke": "lowered"
+          }
+        }
+      }
+    }
+  },
+  "items": {
+    "integers": [
+      {
+        "content": "1"
+      },
+      {
+        "content": "0"
+      },
+      {
+        "content": "2"
+      }
+    ]
+  }
+}

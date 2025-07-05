@@ -1,0 +1,37 @@
+{
+  "type": "textfield",
+  "attribute": {
+    "height": "8.9992mm",
+    "width": "61.9986mm",
+    "name": "TextField"
+  },
+  "value": {
+    "text": {
+      "content": "Text Value"
+    }
+  },
+  "caption": {
+    "para": {
+      "vAlign": "middle"
+    },
+    "reserve": "25.0012mm",
+    "value": {
+      "text": {
+        "content": "Text Field"
+      }
+    },
+    "placement": "left"
+  },
+  "ui": {
+    "textEdit": {}
+  },
+  "margin": {
+    "topInset": "1mm",
+    "leftInset": "1mm",
+    "bottomInset": "1mm",
+    "rightInset": "1mm"
+  },
+  "para": {
+    "vAlign": "middle"
+  }
+}
